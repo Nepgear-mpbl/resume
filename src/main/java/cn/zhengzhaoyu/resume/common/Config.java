@@ -42,7 +42,7 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configEngine(Engine me) {
-
+        me.addSharedFunction("/_view/common/__layout.html");
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Config extends JFinalConfig {
         ActiveRecordPlugin arp = new ActiveRecordPlugin(provider);
         arp.setDialect(new MysqlDialect());
         _MappingKit.mapping(arp);
-        arp.setBaseSqlTemplatePath(PathKit.getWebRootPath() + "/src/main/webapp/_sql");
+        arp.setBaseSqlTemplatePath(PathKit.getWebRootPath() + "/_sql");
         arp.addSqlTemplate("all.sql");
         return arp;
     }
